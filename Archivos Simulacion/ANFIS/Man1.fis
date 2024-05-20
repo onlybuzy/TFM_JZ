@@ -1,0 +1,81 @@
+[System]
+Name='Man1'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='LeftSensor'
+Range=[0.1 0.85]
+NumMFs=3
+MF1='near':'trimf',[-0.2125 0.1 0.4125]
+MF2='normal':'trimf',[0.1625 0.475 0.7875]
+MF3='far':'trimf',[0.5375 0.85 1.1625]
+
+[Input2]
+Name='FrontSensot'
+Range=[0.1 0.85]
+NumMFs=3
+MF1='near':'trimf',[-0.2125 0.1 0.4125]
+MF2='normal':'trimf',[0.1625 0.475 0.7875]
+MF3='far':'trimf',[0.5375 0.85 1.1625]
+
+[Input3]
+Name='RightSensor'
+Range=[0.1 0.85]
+NumMFs=3
+MF1='near':'trimf',[-0.2125 0.1 0.4125]
+MF2='normal':'trimf',[0.1625 0.475 0.7875]
+MF3='far':'trimf',[0.5375 0.85 1.1625]
+
+[Output1]
+Name='leftMotor'
+Range=[0 9]
+NumMFs=3
+MF1='slow':'trimf',[-3.75 0 3.75]
+MF2='normal':'trimf',[0.75 4.5 8.25]
+MF3='fast':'trimf',[5.25 9 12.75]
+
+[Output2]
+Name='rightMotor'
+Range=[0 9]
+NumMFs=3
+MF1='slow':'trimf',[-3.75 0 3.75]
+MF2='normal':'trimf',[0.75 4.5 8.25]
+MF3='fast':'trimf',[5.25 9 12.75]
+
+[Rules]
+1 1 1, 1 1 (1) : 1
+2 1 1, 2 1 (1) : 1
+3 1 1, 1 3 (1) : 1
+1 2 1, 1 1 (1) : 1
+2 2 1, 2 3 (1) : 1
+3 2 1, 1 3 (1) : 1
+1 3 1, 2 2 (1) : 1
+2 3 1, 1 3 (1) : 1
+3 3 1, 1 3 (1) : 1
+1 1 2, 3 1 (1) : 1
+2 1 2, 1 1 (1) : 1
+3 1 2, 2 3 (1) : 1
+1 2 2, 3 1 (1) : 1
+2 2 2, 2 2 (1) : 1
+3 2 2, 2 2 (1) : 1
+1 3 2, 3 2 (1) : 1
+2 3 2, 2 2 (1) : 1
+3 3 2, 1 2 (1) : 1
+1 1 3, 3 1 (1) : 1
+2 1 3, 3 1 (1) : 1
+3 1 3, 3 1 (1) : 1
+1 2 3, 3 1 (1) : 1
+2 2 3, 2 1 (1) : 1
+3 2 3, 3 2 (1) : 1
+1 3 3, 3 1 (1) : 1
+2 3 3, 2 1 (1) : 1
+3 3 3, 3 3 (1) : 1
